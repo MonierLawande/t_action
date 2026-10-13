@@ -1,0 +1,33 @@
+name: t2_task
+on:
+    push:
+        branches: [ "master" ]
+    pull_request:
+        branches: [ "master" ]
+jobs:
+    test:
+        runs-on: ubuntu-latest  # Replace with desired runner OS
+        steps:
+            - uses: actions/checkout@v2  # Check out the repository code
+            
+            - name: Set up Python environment
+              uses: actions/setup-python@v2
+              with:
+                  python-version: 3.x  # Replace with your Python version (adjust if needed)
+            - name: Run tests
+              run: |
+                  echo "Running tests..." # Replace this with actual test
+
+    test2:
+        runs-on: ubuntu-latest  # Replace with desired runner OS
+        needs: test
+        steps:
+            - uses: actions/checkout@v2  # Check out the repository code
+            
+            - name: Set up Python environment
+              uses: actions/setup-python@v2
+              with:
+                  python-version: 3.x  # Replace with your Python version (adjust if needed)
+            - name: Run tests
+              run: |
+                  echo "Running tests..." # Replace this with actual test
