@@ -19,7 +19,6 @@ jobs:
           python-version: 3.x  # Replace with your Python version (adjust if needed)
 
   deploy:
-    needs: test
     runs-on: ubuntu-latest
     #if: ${{ always() }}  # Always run the deployment job, even if tests fail
     steps:
